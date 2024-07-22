@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block title %} <title>Add Product Page</title>{% endblock %}
+
+    {% block content %}
+        <h1>Adding Product: </h1>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Product Cover:</label>
+            <br>
+            {{form.picture}}
+            <br>
+            <label>Categories:</label>
+            <br>
+            <input required typ="text" name="categories_name", list="category-list">
+            <details id="categories_name-list">
+                {% for categories_name in categories %}
+                <select>
+                    <option value=" {{categories_name}}">{{categories}}</option>
+                </select>
+
+                {% endfor %}
+
+            </details>
+
+
+        </form>
+        <label>Gender:</label>
+            <br>
+            <input required typ="text" name="category", list="category-list">
+            <details id="category-list">
+                {% for categorie in categories%}
+                <select>
+                    <option value=" {{category}}">{{category}}</option>
+                </select>
+
+                {% endfor %}
+    <div>
+        <label>Product Description:</label>
+        <br>
+        {{form.description}}
+
+    </div>
+
+    {% endblock %}

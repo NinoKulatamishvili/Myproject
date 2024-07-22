@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block title %} <title>Reading Page</title>{% endblock %}
+
+    {% block content %}
+        <h2>{{product.category}}</h2>
+        <h3>{{product.category_name}}</h3>
+<h3>
+    {% for category in product.category.all %}
+    {{gender}},
+    {% endfor%}
+</h3>
+<p>{{product.description}}</p>
+    {% endblock %}
+
